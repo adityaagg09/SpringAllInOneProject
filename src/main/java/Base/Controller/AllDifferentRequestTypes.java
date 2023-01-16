@@ -1,10 +1,9 @@
-package Controller;
+package Base.Controller;
 
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class AllDifferentRequestTypes {
-
     @GetMapping(value = "/getMapping")
     public String getMapping() {
         return "GetMapping request done successfully";
@@ -20,7 +19,7 @@ public class AllDifferentRequestTypes {
         return "PostMapping request done successfully";
     }
 
-    @DeleteMapping (value = "/deleteMapping")
+    @DeleteMapping(value = "/deleteMapping")
     public String deleteMapping() {
         return "DeleteMapping request done successfully";
     }
@@ -29,6 +28,4 @@ public class AllDifferentRequestTypes {
     public String patchMapping() {
         return "PatchMapping request done successfully";
     }
-
-
 }
