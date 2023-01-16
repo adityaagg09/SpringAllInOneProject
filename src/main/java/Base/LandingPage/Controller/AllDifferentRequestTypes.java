@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class AllDifferentRequestTypes {
+
     @GetMapping(value = "/getMapping")
     public String getMapping() {
         return "GetMapping request done successfully";
