@@ -15,7 +15,6 @@ public class AllDifferentInputParamters {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
 
-
     public String getFirstName() {
         return firstName;
     }
