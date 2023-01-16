@@ -1,5 +1,6 @@
-package Base.Controller;
+package Base.LandingPage.Controller;
 
+import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
