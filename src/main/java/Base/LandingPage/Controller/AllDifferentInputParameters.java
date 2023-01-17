@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.slf4j.Logger;
 
+import java.util.List;
+
 
 @RestController
 public class AllDifferentInputParameters {
@@ -26,6 +28,19 @@ public class AllDifferentInputParameters {
         // When ip data is string only
         LOGGER.info("Request Body parameters are : {}",requestBodyParam.toString());
     }
+
+
+    @GetMapping(value = "/getMappingParamListJson")
+    public void getMappingParamListJson(@RequestBody List<AllDifferentInputParamters> requestBodyParam) {
+        // When ip data is list send data like this [{"firtName":"","lastName":""}, {"firtName":"","lastName":""}]
+        LOGGER.info("Request Body parameters are : {}",requestBodyParam.toString());
+    }
+
+//    @GetMapping(value = "/getMappingParamListJson")
+//    public void getMappingParam(@ List<AllDifferentInputParamters> requestBodyParam) {
+//        // When ip data is list send data like this [{"firtName":"","lastName":""}, {"firtName":"","lastName":""}]
+//        LOGGER.info("Request Body parameters are : {}",requestBodyParam.toString());
+//    }
 
 
 }
