@@ -45,7 +45,7 @@ public class RestApi {
                 .setRetryHandler(new DefaultHttpRequestRetryHandler(numberOfRetries, false))
                 .build();
 
-        return new HttpComponentsClientHttpRequestFactory();
+        return new HttpComponentsClientHttpRequestFactory(); // client
     }
 
     public <T> ResponseEntity<T> post(Class<T> responseType, String url, Object postData) {
@@ -57,7 +57,7 @@ public class RestApi {
             httpHeaders.add(HttpHeaders.ACCEPT, "applicaton/json");
             httpHeaders.setAcceptCharset(Collections.singletonList(StandardCharsets.UTF_8)); // ?
 
-            RestTemplate restTemplate = new RestTemplate();
+            RestTemplate restTemplate = new RestTemplate(getClientHttpRequestFactory());
 
             return restTemplate.exchange(url,
                     HttpMethod.POST,
