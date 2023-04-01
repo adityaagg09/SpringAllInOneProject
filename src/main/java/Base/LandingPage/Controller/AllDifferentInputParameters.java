@@ -1,8 +1,11 @@
 package Base.LandingPage.Controller;
 
+import Base.Exception.MakeYourOwnException;
 import Base.LandingPage.Model.AllDifferentInputParamters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -52,4 +55,8 @@ public class AllDifferentInputParameters {
         LOGGER.info("Request Body parameters are : {},  {}", val.size(), val.toString());
     }
 
+    @GetMapping(value = "/getMappingException")
+    public ResponseEntity<String> getMappingThrowingException() throws MakeYourOwnException {
+        throw new MakeYourOwnException("Testing exception working fine");
+    }
 }
