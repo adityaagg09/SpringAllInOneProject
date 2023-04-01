@@ -1,5 +1,7 @@
 package Base.LandingPage.Scheduler;
 
+import Base.LandingPage.Model.AllDifferentInputParamters;
+import org.apache.commons.lang3.SerializationUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
@@ -16,6 +18,8 @@ public class Scheduler {
 
     @Scheduled(cron= "${schedulerTime}" )
     public void scheduler() {
+        AllDifferentInputParamters reqObject = new AllDifferentInputParamters();
+        AllDifferentInputParamters clonedObject = SerializationUtils.clone(reqObject); // We need to add the code in all the classes and the code for the clone()
         LOGGER.info("Scheduler is Running : "  + new Timestamp(System.currentTimeMillis()));
     }
 

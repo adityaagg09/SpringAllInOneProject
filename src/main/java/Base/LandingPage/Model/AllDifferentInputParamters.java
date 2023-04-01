@@ -4,7 +4,9 @@ package Base.LandingPage.Model;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class AllDifferentInputParamters {
+import java.io.Serializable;
+
+public class AllDifferentInputParamters implements Serializable, Cloneable {
 
     private String firstName;
 
@@ -30,4 +32,10 @@ public class AllDifferentInputParamters {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    @Override
+    public AllDifferentInputParamters clone() throws  CloneNotSupportedException {
+        return  (AllDifferentInputParamters) super.clone() ;
+    }
+
 }
