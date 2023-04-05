@@ -24,7 +24,7 @@ public class AllCodeForExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(value = Exception.class)
     public ResponseEntity<Object> handleMakeYourOwnException(Exception makeYourOwnException) {
         LOGGER.error("Exception error", makeYourOwnException);
-        // We can add as many response key value pairs here which we want as a reponse
+        // We can add as many response key value pairs here which we want as a response
         LinkedHashMap<String, Object> response = new LinkedHashMap<>();
         response.put("STATUS", "FAILURE");
         response.put("TIME", LocalDateTime.now());
