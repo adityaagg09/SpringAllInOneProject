@@ -1,11 +1,13 @@
 package Base.LandingPage.Model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.io.Serializable;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class AllDifferentInputParamters implements Serializable, Cloneable {
 
     private String firstName;
