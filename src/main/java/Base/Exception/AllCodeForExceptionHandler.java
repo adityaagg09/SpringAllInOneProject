@@ -27,6 +27,7 @@ public class AllCodeForExceptionHandler extends ResponseEntityExceptionHandler {
         // We can add as many response key value pairs here which we want as a response
         LinkedHashMap<String, Object> response = new LinkedHashMap<>();
         response.put("STATUS", "FAILURE");
+        response.put("Exception Type", "Customized");
         response.put("TIME", LocalDateTime.now());
         ResponseEntity responseEntity = new ResponseEntity(response, HttpStatus.FORBIDDEN);
         return responseEntity;

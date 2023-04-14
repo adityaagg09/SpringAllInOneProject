@@ -36,7 +36,7 @@ public class AllStuffRelatedToArraysAndItsTypes {
         linkedHashSet.add("Hello");
         linkedHashSet.add("Hi");
         linkedHashSet.add("Hello");
-        
+
         LOGGER.info("Checking if value Hello exist in our LinkedHashSet or not ? : {}", linkedHashSet.contains("Hello"));
         LOGGER.info("Checking if value Hello exist in our LinkedHashSet or not ? : {}", linkedHashSet.contains("Hel"));
         LOGGER.info("Printing all the LinkedHashSet values : ");
