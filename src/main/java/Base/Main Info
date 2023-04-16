@@ -1,1 +1,9 @@
 Swagger url :- http://localhost:6969/application/swagger-ui/index.html
+
+Configuration :- We can set up any class variables to some methods or we want to connect it to some service before running the application then we use it
+
+Beans :- It creates a singleton object of it and can be used we can call the bean name to get the instance of it and need to define all the subclasses present in it through other bean code pieces
+Default @Scope is singelton(1 instance per spring container) or Prototype(Every time it creates a new),
+Can define bean at method level only not the class level
+
+Autowired :- If we define this on constructor or setter or on a class of a different class then it automatically inject the dependancies; For these feature we need to add the @Configuration anntation
