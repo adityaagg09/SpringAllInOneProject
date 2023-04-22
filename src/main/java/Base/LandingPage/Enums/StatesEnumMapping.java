@@ -1,5 +1,7 @@
 package Base.LandingPage.Enums;
 
+import com.fasterxml.jackson.annotation.JsonEnumDefaultValue;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -7,7 +9,8 @@ import java.util.List;
 public enum StatesEnumMapping {
     HR("Haryana", true),
     PB("Punjab", true),
-    JK("Jammu & Kashmir", false);
+    JK("Jammu & Kashmir", false),
+    @JsonEnumDefaultValue UNKNOWN("unknown", false); // For this to enabled we need to add property in application.properties file
 
     String stateValue;
 
