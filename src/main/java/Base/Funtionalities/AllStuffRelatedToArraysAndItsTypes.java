@@ -6,16 +6,20 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
-import java.util.LinkedList;
+import java.util.*;
 
 public class AllStuffRelatedToArraysAndItsTypes {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AllStuffRelatedToArraysAndItsTypes.class);
 
     public static void newArrayTypes() {
+
+        // We should never use the hashMap becauase it is the interface class for the map
+        Map<String, String> map_ =  new HashMap<>();
+        map_.put("Testing", "Tested");
+        map_.put("Testing1", "Tested1");
+        LOGGER.info("HashMap all values are : {} and key set : {}",map_.values(), map_.keySet());
+
 
         // It is basically set but internally uses the map data structure, but if print all elements then order is random
         HashSet<String> hashSet = new HashSet<>();

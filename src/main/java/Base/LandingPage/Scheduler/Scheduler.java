@@ -1,6 +1,7 @@
 package Base.LandingPage.Scheduler;
 
 import Base.Funtionalities.AllStuffRelatedToArraysAndItsTypes;
+import Base.Funtionalities.Streams_Filters;
 import Base.LandingPage.Doa.CallingDB;
 import Base.LandingPage.Enums.StatesEnumMapping;
 import Base.LandingPage.Model.AllDifferentInputParamters;
@@ -39,6 +40,10 @@ public class Scheduler {
         StatesEnumMapping enumObject = StatesEnumMapping.getStateEnum(StatesEnumMapping.HR);
 
         AllStuffRelatedToArraysAndItsTypes.newArrayTypes();
+
+        Streams_Filters.Filters();
+
+        Streams_Filters.Map();
 
     }
 
