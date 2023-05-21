@@ -21,8 +21,8 @@ public class AllCodeForExceptionHandler extends ResponseEntityExceptionHandler {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AllCodeForExceptionHandler.class);
 
-    @ExceptionHandler(value = Exception.class)
-    public ResponseEntity<Object> handleMakeYourOwnException(Exception makeYourOwnException) {
+    @ExceptionHandler(value = MakeYourOwnException.class)
+    public ResponseEntity<Object> handleMakeYourOwnException(MakeYourOwnException makeYourOwnException) {
         LOGGER.error("Exception error", makeYourOwnException);
         // We can add as many response key value pairs here which we want as a response
         LinkedHashMap<String, Object> response = new LinkedHashMap<>();

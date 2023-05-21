@@ -1,9 +1,14 @@
 package Base.LandingPage.Controller;
 
+import Base.LandingPage.API.CallingCode;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class AllDifferentRequestTypes {
+
+    @Autowired
+    private CallingCode callingCode;
 
 
     @GetMapping(value = "/getMapping")
@@ -33,6 +38,11 @@ public class AllDifferentRequestTypes {
     @PatchMapping(value = "/patchMapping")
     public String patchMapping() {
         return "PatchMapping request done successfully";
+    }
+
+    @GetMapping(value = "/hitttingTheApi")
+    public String getApiValue() {
+        return  callingCode.getDataFromApi();
     }
 
 
