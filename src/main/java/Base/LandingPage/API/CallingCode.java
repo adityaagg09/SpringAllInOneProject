@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class CallingCode {
@@ -13,6 +14,7 @@ public class CallingCode {
     @Autowired
     private RestApi restApi;
 
+    @Transactional // If transaction is not completed it will revoked all the db inserts
     public String getDataFromApi() {
         String url = "https://jsonplaceholder.typicode.com/todos/1";
 

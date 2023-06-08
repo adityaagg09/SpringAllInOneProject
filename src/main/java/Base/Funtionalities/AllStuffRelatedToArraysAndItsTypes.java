@@ -1,5 +1,6 @@
 package Base.Funtionalities;
 
+import com.google.common.collect.Lists;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
@@ -46,6 +47,14 @@ public class AllStuffRelatedToArraysAndItsTypes {
         LOGGER.info("Printing all the LinkedHashSet values : ");
         for(String val : linkedHashSet) {
             LOGGER.info(val);
+        }
+
+        // It partitions the array in the given size of input 
+        List<String> list = Arrays.asList("1","2","3","4","5");
+        List<List<String>> partitionLists = Lists.partition(list,2);
+        LOGGER.info("Size of Partitioned list is : {}", partitionLists.size());
+        for(List<String> lists: partitionLists) {
+            LOGGER.info("Partitioned list is: {}", lists);
         }
 
 
