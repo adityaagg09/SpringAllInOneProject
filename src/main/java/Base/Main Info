@@ -9,3 +9,8 @@ Can define bean at method level only not the class level
 
 Autowired :- If we define this on constructor or setter or on a class of a different class then it automatically inject the dependancies; For these feature we need to add the @Configuration anntation
 Main autowired :- When spring makes a bean of it then it will call and get the instance of that class which is created initially and oly once :)
+
+Autoboxing :- It is a trick to convert primitive type (int) to Object; int -> Integer extends Object class
+UnBoxing :- It opens the wrapper and returns the primitive type (int)
+
+A lambda expression implements a Functional interface is an interface that has only 1 abstract method

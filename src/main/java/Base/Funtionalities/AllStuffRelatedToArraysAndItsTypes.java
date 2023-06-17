@@ -49,7 +49,7 @@ public class AllStuffRelatedToArraysAndItsTypes {
             LOGGER.info(val);
         }
 
-        // It partitions the array in the given size of input 
+        // It partitions the array in the given size of input
         List<String> list = Arrays.asList("1","2","3","4","5");
         List<List<String>> partitionLists = Lists.partition(list,2);
         LOGGER.info("Size of Partitioned list is : {}", partitionLists.size());
