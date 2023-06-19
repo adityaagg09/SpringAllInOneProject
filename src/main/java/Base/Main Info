@@ -14,3 +14,7 @@ Autoboxing :- It is a trick to convert primitive type (int) to Object; int -> In
 UnBoxing :- It opens the wrapper and returns the primitive type (int)
 
 A lambda expression implements a Functional interface is an interface that has only 1 abstract method
+
+Effectively final is assigning value to a variable before it's usage in the lambda expression
+
+Optional ? Generics , imperative & functional programming
