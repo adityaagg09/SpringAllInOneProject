@@ -28,6 +28,10 @@ public class Streams_Filters {
         test=Arrays.asList(test1, test2, test3);
         List<List<String>> test4=Arrays.asList(Arrays.asList("12","12"), Arrays.asList("21","45"));
 
+        // Lambdas functions
+        Map<String, List<String>> map4_ = new HashMap<>();
+        test1.forEach(x -> map4_.computeIfAbsent(x, y -> new ArrayList<>()).add("123"));
+
         // Collecting results
         List<String> result = test.stream().map(x -> x.get(0)).collect(Collectors.toList());
         String result7 = test.stream().map(x -> x.get(0)).collect(Collectors.joining("_#"));

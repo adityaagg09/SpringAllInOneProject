@@ -25,16 +25,16 @@ public class Lambdas {
         R apply(T t);
     }
 
-    public class Printing implements Suppliers, Consumers {
-
-        public Object get() {
-            return null;
-        }
-
-        public void accept(Object o) {
-
-        }
-    }
+//    public class Printing implements Suppliers, Consumers {
+//
+//        public Object get() {
+//            return null;
+//        }
+//
+//        public void accept(Object o) {
+//
+//        }
+//    }
 
     public static void Map() {
 
