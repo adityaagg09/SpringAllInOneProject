@@ -67,7 +67,7 @@ public class Threads {
 
     // Reentrant lock uses the FIFO principal meaning threads are in order
     public synchronized void print1() {
-        if(lock1.tryLock()) {
+        if(lock1.tryLock()) { // Try to acquire lock if it is available
             try {
                 LOGGER.info("Lock can be acquired or not ? : {}", lock1.tryLock(500, TimeUnit.HOURS)); // It will return t/f depending upon lock can be acquired or not ?
                 lock1.lock(); // It will lock and we need to do unlock else it will ifinite

@@ -8,14 +8,15 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
+import java.util.concurrent.*;
 
 public class AllStuffRelatedToArraysAndItsTypes {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AllStuffRelatedToArraysAndItsTypes.class);
 
-    public static void newArrayTypes() {
+    public static void newArrayTypes() throws InterruptedException {
 
-        // We should never use the hashMap becauase it is the interface class for the map
+        // We should never use the hashMap because it is the interface class for the map
         Map<String, String> map_ =  new HashMap<>();
         map_.put("Testing", "Tested");
         map_.put("Testing1", "Tested1");
@@ -56,6 +57,24 @@ public class AllStuffRelatedToArraysAndItsTypes {
         for(List<String> lists: partitionLists) {
             LOGGER.info("Partitioned list is: {}", lists);
         }
+
+
+        // Concurrent Map
+        ConcurrentMap<String, String> concurrentMap = new ConcurrentHashMap<>();
+        concurrentMap.put("Hello", "Pinka Paaji");
+
+        // Blocking queue
+        BlockingQueue<String> blockingQueue = new LinkedBlockingQueue<>(); // Queue + Blocking queue
+        blockingQueue.offer("Pinka");
+        blockingQueue.offer("Paaji");
+        blockingQueue.offer("Paaji2");
+        // Special for concurrent queues
+        blockingQueue.offer("Pratima", 100, TimeUnit.MILLISECONDS); // Will wait till this for getting inserted
+        blockingQueue.poll(300, TimeUnit.MILLISECONDS); // Will wait till this much amount of time and if queue is not available returns false
+
+        //
+
+
 
 
     }
