@@ -4,6 +4,7 @@ import Base.Exception.MakeYourOwnException;
 import Base.LandingPage.Model.AllDifferentInputParamters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +17,11 @@ public class AllDifferentInputParameters implements AllDifferentInputParametersI
 
     private static final Logger LOGGER =  LoggerFactory.getLogger(AllDifferentInputParameters.class);
 
+
+    @GetMapping(value = "/getMappingRequestParam")
+    public ResponseEntity<String> getMappingParamsString(@RequestParam(name = "test", required = true)String value) {
+        return new ResponseEntity<>(value, HttpStatus.OK);
+    }
 
     @Override
     @GetMapping(value = "/getMappingParamString")

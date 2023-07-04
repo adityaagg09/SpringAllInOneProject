@@ -2,6 +2,9 @@ package Base.LandingPage.Controller;
 
 import Base.LandingPage.API.CallingCode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -12,17 +15,19 @@ public class AllDifferentRequestTypes {
 
 
     @GetMapping(value = "/getMapping")
-    public String getMapping() {
-        return "GetMapping request done successfully";
+    public ResponseEntity<String> getMapping() {
+        return new ResponseEntity<>("GetMapping request done successfully", HttpStatus.OK);
     }
 
 
+    @PreAuthorize("hasRole('ROLE_USER')")
     @PutMapping(value = "/putMapping")
     public String putMapping() {
         return "PutMapping request done successfully";
     }
 
 
+    @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_VIEW_ONLY')")
     @PostMapping(value = "/postMapping")
     public String postMapping() {
         return "PostMapping request done successfully";
