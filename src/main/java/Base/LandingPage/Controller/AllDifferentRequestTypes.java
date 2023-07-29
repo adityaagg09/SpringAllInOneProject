@@ -1,6 +1,7 @@
 package Base.LandingPage.Controller;
 
 import Base.LandingPage.API.CallingCode;
+import Base.LandingPage.Model.SendingAndReceivingDifferentNames;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,8 @@ public class AllDifferentRequestTypes {
 
     @GetMapping(value = "/getMapping")
     public ResponseEntity<String> getMapping() {
+        SendingAndReceivingDifferentNames resObj = new SendingAndReceivingDifferentNames();
+        resObj.setNameOfParameterInThisOrderWhichYouAreRecevingFromAnyOtherService("Hello");
         return new ResponseEntity<>("GetMapping request done successfully", HttpStatus.OK);
     }
 
