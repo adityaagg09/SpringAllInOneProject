@@ -17,7 +17,7 @@ public class SchedulerTest {
     Scheduler scheduler;
 
     @Test
-    public void test_schedulerCompleteData() {
+    public void test_schedulerCompleteData() throws InterruptedException {
         scheduler.scheduler();
     }
 

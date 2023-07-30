@@ -26,7 +26,7 @@ public class Scheduler {
     private CallingDB callingDB;
 
     @Scheduled(cron= "${schedulerTime}" )
-    public void scheduler() {
+    public void scheduler() throws InterruptedException {
         AllDifferentInputParamters reqObject = new AllDifferentInputParamters();
         AllDifferentInputParamters clonedObject = SerializationUtils.clone(reqObject); // We need to add the code in all the classes and the code for the clone()
         LOGGER.info("Scheduler is Running : "  + new Timestamp(System.currentTimeMillis()));

@@ -48,7 +48,7 @@ public class Streams_Filters {
         //In this we first group on the first index of the array elements and then we do mapping which thing we want and then we do the final result return type
         Map<String, List<String>> map2_ = test4.stream().collect(Collectors.groupingBy(x -> x.get(0), Collectors.mapping(x -> x.get(1), Collectors.toList())));
 
-        // Paritioning  this get all the true and false based on the condition which we have passed
+        // Partioning  this get all the true and false based on the condition which we have passed
         Map<Boolean, List<String>> map3_ = test1.stream().collect(Collectors.partitioningBy(product -> product.equalsIgnoreCase("123")));
 
         // Collecting results 2
@@ -66,6 +66,9 @@ public class Streams_Filters {
                         .findAny();
         Optional<String> result3  = test2.stream().filter(x -> x.equalsIgnoreCase("13"))
                 .findFirst(); // Returns the first matching elements valid if elements are in the sorted order
+
+        // orElse statement result not for the Optional<> statement
+        String result10 = test2.stream().filter(x -> x.equalsIgnoreCase("4")).findAny().orElse("Returning Else");
 
         boolean result4  = test2.stream().anyMatch(x -> x.equalsIgnoreCase("13"));
 
