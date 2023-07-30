@@ -16,10 +16,10 @@ public class AllDifferentRequestTypes {
 
 
     @GetMapping(value = "/getMapping")
-    public ResponseEntity<String> getMapping() {
+    public ResponseEntity<SendingAndReceivingDifferentNames> getMapping() {
         SendingAndReceivingDifferentNames resObj = new SendingAndReceivingDifferentNames();
         resObj.setNameOfParameterInThisOrderWhichYouAreRecevingFromAnyOtherService("Hello");
-        return new ResponseEntity<>("GetMapping request done successfully", HttpStatus.OK);
+        return new ResponseEntity<>(resObj, HttpStatus.OK);
     }
 
 
