@@ -8,6 +8,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import java.sql.SQLException;
 import java.util.Arrays;
 
 @RunWith(MockitoJUnitRunner.Silent.class)
@@ -17,7 +18,7 @@ public class SchedulerTest {
     Scheduler scheduler;
 
     @Test
-    public void test_schedulerCompleteData() throws InterruptedException {
+    public void test_schedulerCompleteData() throws InterruptedException, SQLException {
         scheduler.scheduler();
     }
 
