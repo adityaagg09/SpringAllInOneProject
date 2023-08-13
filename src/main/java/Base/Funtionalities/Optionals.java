@@ -39,7 +39,7 @@ public class Optionals {
         ofNullableOptional.orElseThrow(() -> new NullPointerException("Faad dia code"));
 
         ofNullableOptional.map(String::toUpperCase).orElseGet(() -> "Testingggg");
-        
+
 
     }
 
