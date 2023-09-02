@@ -34,6 +34,7 @@ public class Scheduler {
     @Autowired
     private PerformQueryUsingConnection performQueryUsingConnection;
 
+
     @Scheduled(cron= "${schedulerTime}" )
     public void scheduler() throws InterruptedException, SQLException {
         AllDifferentInputParamters reqObject = new AllDifferentInputParamters();
@@ -47,6 +48,8 @@ public class Scheduler {
         queryDbUsingJdbcTemplate.queryRecords();
 
         performQueryUsingConnection.insertIntoDb();
+
+
 
         List<String> stateEnumState = StatesEnumMapping.getStateEnumNames();
 
