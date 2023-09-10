@@ -25,14 +25,23 @@ public class Scheduler {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Scheduler.class);
 
+    // It helps in faster read as variables are now final, less memory, Auto garbage collector
+    // It will initialize as constructor is called because they are final, else in other gets initialized only when we use them for concurrent
     @Autowired
-    private CallingDB callingDB;
+    public Scheduler(CallingDB callingDB, QueryDbUsingJdbcTemplate queryDbUsingJdbcTemplate, PerformQueryUsingConnection performQueryUsingConnection) {
+        this.callingDB = callingDB;
+        this.queryDbUsingJdbcTemplate = queryDbUsingJdbcTemplate;
+        this.performQueryUsingConnection = performQueryUsingConnection;
+    }
 
-    @Autowired
-    private QueryDbUsingJdbcTemplate queryDbUsingJdbcTemplate;
+//    @Autowired
+    private final CallingDB callingDB;
 
-    @Autowired
-    private PerformQueryUsingConnection performQueryUsingConnection;
+//    @Autowired
+    private final QueryDbUsingJdbcTemplate queryDbUsingJdbcTemplate;
+
+//    @Autowired
+    private final PerformQueryUsingConnection performQueryUsingConnection;
 
 
     @Scheduled(cron= "${schedulerTime}" )
