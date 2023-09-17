@@ -2,6 +2,7 @@ Swagger url :- http://localhost:6969/application/swagger-ui/index.html ( UserNam
 
 Configuration :- We can set up any class variables to some methods or we want to connect it to some service before running the application then we use it
 These are nothing just to mark class different and make a bean of it :)
+The @Configuration annotation indicates that the class is a source of bean definitions
 
 Beans :- It creates a singleton object of it and can be used we can call the bean name to get the instance of it and need to define all the subclasses present in it through other bean code pieces
 Default @Scope is singelton(1 instance per spring container) or Prototype(Every time it creates a new),
@@ -20,3 +21,17 @@ Effectively final is assigning value to a variable before it's usage in the lamb
 Generics , imperative & functional programming
 
 Component ?
+
+
+------------- Inversion Of Control ( IOC ) ---------------------
+Spring :- Frameworks for framework. It is a Dependancy injection ( DI ) framework to make java application loosely coupled
+It Provides the IOC ( Inversion of container ) which helps in dependancy injection
+Spring framework provides many modules :- SpringMvc, SpringJdbc, SpringSecurity and many more
+
+IOC is component in a spring. ( Create object, hold in memory and inserting object when required )
+Gives info abt Beans(Gives all the POJO & .xml file) and config(Which bean is dependant on which Bean( Doa & service class relation )  )
+
+Interface ApplicationContext represents the IoC container
+Spring framework provides several implementations of the ApplicationContext interface: ClassPathXmlApplicationContext and FileSystemXmlApplicationContext for standalone applications, and WebApplicationContext for web applications.
+
+In order to assemble beans, the container uses configuration metadata, which can be in the form of XML configuration or annotations.
